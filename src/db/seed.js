@@ -14,6 +14,26 @@ const seed = async ()=>{
         ],{
             ignoreDuplicates:true
         })
+        await Season.bulkCreate([
+            {id:'S' , name:'Summer'},
+            {id:'F' , name:'Fall'},
+            {id:'W' , name:'Winter'},
+            {id:'P' , name:'Spring'}
+        ],{
+            ignoreDuplicates:true
+        })
+
+        await Course.bulkCreate([
+            {id:'LP' , name:'LaunchPad'},
+            {id:'CX' , name:'Crux'},
+            {id:'IB' , name:'Interview BootCamp'},
+            {id:'AD' , name:'Android Dev'},
+            {id:'WD' , name:'Web Dev'}
+        ],{
+            ignoreDuplicates:true
+        })
+
+
 
     }catch(e){
         console.error(e)
