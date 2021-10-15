@@ -8,5 +8,17 @@
 </head>
 <body>
     <h1>Generate BatchCodes</h1>
+
+    <form>
+        <b>Center</b>
+        <select>
+            {{#each centers as |c|}}
+                <option value="{{c.id}}">{{c.name}}</option>
+            {{/each}}
+        </select>
+
+        <br>
+    </form>
+
 </body>
 </html>

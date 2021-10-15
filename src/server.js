@@ -6,11 +6,11 @@ const app = express()
 app.set('view engine' , 'hbs')
 app.set('views' , path.resolve(__dirname,'../views'))
 
-app.get('/batchcode' , (req,res)=>{
+app.get('/batchcode' , async (req,res)=>{
 
     try {
         const centers = await Center.findAll()
-        const courses = await Courses.findAll()
+        const courses = await Course.findAll()
         const seasons = await Season.findAll()
         res.render('batchcode' , {
             centers, courses,seasons
