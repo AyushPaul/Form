@@ -48,6 +48,7 @@ const Batch = db.define('batch' , {
         type:DataTypes.STRING(8),
         primaryKey:true
     },
+    year:DataTypes.INTEGER(4),
     start:DataTypes.DATE,
     end:DataTypes.DATE
 })

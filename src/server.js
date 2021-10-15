@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const {Center , Season , Course} = require('./db/models')
+const {Center , Season , Course , Batch} = require('./db/models')
 const app = express()
 
 app.set('view engine' , 'hbs')
@@ -36,6 +36,25 @@ app.post('/batchcode' , async (req,res) =>{
     batchcode+=req.body.season
     batchcode+=req.body.batchno
     res.send(batchcode)
+
+    try {
+
+        const batch = await Batch.create({
+            code:batchcode,
+            year:req.body.year,
+            courseId:req.body.course,
+            centerId:req.body.center,
+            seasonId:req.body.season,
+            start:Date.parse(req.body.start),
+            end:Date.parse(req.body.end)
+
+        })
+        console.log(batch)
+        
+    } catch (e) {
+        console.error(e)
+        
+    }
 })
 
 
