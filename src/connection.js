@@ -7,3 +7,7 @@ const db = new sequelize('sampledb1' , 'sampleuser1' , 'samplepass1' , {
 db.authenticate()
     .then(()=>console.log('Connected Successfully!!'))
     .catch((err)=>console.error(err))
+
+module.exports = {
+    db
+}
