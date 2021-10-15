@@ -5,6 +5,10 @@ const app = express()
 
 app.set('view engine' , 'hbs')
 app.set('views' , path.resolve(__dirname,'../views'))
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+
 
 app.get('/batchcode' , async (req,res)=>{
 
@@ -22,6 +26,16 @@ app.get('/batchcode' , async (req,res)=>{
 
 
     res.render('batchcode')
+})
+
+app.post('/batchcode' , async (req,res) =>{
+    let batchcode = ''
+    batchcode+=req.body.course
+    batchcode+=req.body.center
+    batchcode+=req.body.year.substr(2)
+    batchcode+=req.body.season
+    batchcode+=req.body.batchno
+    res.send(batchcode)
 })
 
 
