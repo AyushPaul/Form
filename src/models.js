@@ -42,3 +42,23 @@ const Season = db.define('season' , {
         allowNull:false
     }
 })
+
+const Batch = db.define('batch' , {
+    code:{
+        type:DataTypes.STRING(8),
+        primaryKey:true
+    },
+    start:DataTypes.DATE,
+    end:DataTypes.DATE
+})
+
+//Associations
+Batch.belongsTo(Course)
+Batch.belongsTo(Center)
+Batch.belongsTo(Season)
+
+Course.hasMany(Batch)
+Center.hasMany(Batch)
+Season.hasMany(Batch)
+
+db.sync()
