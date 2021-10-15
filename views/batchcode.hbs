@@ -11,7 +11,7 @@
 
     <form action="/batchcode" method="POST">
         <b>Center</b>
-        <select>
+        <select name="center">
             {{#each centers as |c|}}
                 <option value="{{c.id}}">{{c.name}}</option>
             {{/each}}
@@ -20,7 +20,7 @@
         <br>
 
         <b>Season</b>
-        <select>
+        <select name="season">
             {{#each seasons as |s|}}
                 <option value="{{s.id}}">{{s.name}}</option>
             {{/each}}
@@ -29,7 +29,7 @@
         <br>
 
         <b>Course</b>
-        <select>
+        <select name="course">
             {{#each courses as |co|}}
                 <option value="{{co.id}}">{{co.name}}</option>
             {{/each}}
@@ -38,7 +38,7 @@
         <br>
 
         <b>Year</b>
-        <select>
+        <select name="year">
             {{#each years as |y|}}
                 <option value="{{y}}">{{y}}</option>
             {{/each}}
@@ -47,7 +47,15 @@
         <br>
 
         <b>Batch</b>
-        <input type="number" min="1" max="5"></input>
+        <input name="batchno" type="number" min="1" max="5"></input>
+
+        <br>
+        <b>Start Date</b>
+        <input name = "start" type="date">
+
+        <br>
+        <b>End Date</b>
+        <input type="date" name="end">
 
     </form>
 
