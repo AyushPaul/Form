@@ -1,0 +1,1 @@
+const {db,Center,Season,Batch,Course,Teacher} = require('./models.js')
