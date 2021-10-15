@@ -12,8 +12,9 @@ app.get('/batchcode' , async (req,res)=>{
         const centers = await Center.findAll()
         const courses = await Course.findAll()
         const seasons = await Season.findAll()
+        const years = [2016,2017,2018,2019,2020,2021]
         res.render('batchcode' , {
-            centers, courses,seasons
+            centers, courses,seasons,years
         })
     } catch (e) {
         console.error(e)

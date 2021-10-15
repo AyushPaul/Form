@@ -9,7 +9,7 @@
 <body>
     <h1>Generate BatchCodes</h1>
 
-    <form>
+    <form action="/batchcode" method="POST">
         <b>Center</b>
         <select>
             {{#each centers as |c|}}
@@ -34,6 +34,20 @@
                 <option value="{{co.id}}">{{co.name}}</option>
             {{/each}}
         </select>
+
+        <br>
+
+        <b>Year</b>
+        <select>
+            {{#each years as |y|}}
+                <option value="{{y}}">{{y}}</option>
+            {{/each}}
+        </select>
+
+        <br>
+
+        <b>Batch</b>
+        <input type="number" min="1" max="5"></input>
 
     </form>
 
