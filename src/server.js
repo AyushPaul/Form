@@ -41,7 +41,7 @@ app.post('/batchcode' , async (req,res) =>{
 
         const batch = await Batch.create({
             code:batchcode,
-            year:req.body.year,
+            //year:req.body.year,
             courseId:req.body.course,
             centerId:req.body.center,
             seasonId:req.body.season,
@@ -50,6 +50,18 @@ app.post('/batchcode' , async (req,res) =>{
 
         })
         console.log(batch)
+        
+    } catch (e) {
+        console.error(e)
+        
+    }
+})
+
+app.get('/batches' , async (req,res) => {
+
+    try {
+        const batches = await Batch.findAll()
+        res.render('batches' , {batches})
         
     } catch (e) {
         console.error(e)
